@@ -32,3 +32,6 @@ let hasDraw = circle.hasOwnProperty('draw');
 
 let hasConfigurePage = circle.hasOwnProperty('configurePage');
 //true
+
+//DO NOT EXTEND PROTOTYPES OF BUILT IN OBJECT, IE. DO NOT ADD METHODS TO ARRAY, OBJECT, OR FUNCTION,
+//NUMBER, STRING, SYMBOL, BOOLEAN.
