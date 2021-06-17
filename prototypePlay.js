@@ -20,3 +20,15 @@ Circle.prototype.retrievePaper = function() {
 Circle.prototype.toString() = function(){
     return 'The radius of this circle is ' + this.radius;
 };
+
+//Object.keys = instance members only, ie. radius, configurePage
+let instanceMembers = Object.keys(circle);
+
+//will log instance members, and also properties of protoype, ie. radius, configurePage, Draw, retrievePaper, etc..
+for(let key in circle) console.log(key);
+
+let hasDraw = circle.hasOwnProperty('draw');
+//false
+
+let hasConfigurePage = circle.hasOwnProperty('configurePage');
+//true
