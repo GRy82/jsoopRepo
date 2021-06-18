@@ -15,9 +15,16 @@ class Circle extends Shape {
         this.radius = radius;
     }
 
+    move(){
+        super.move();
+        console.log('I am overriding the parent implementation');
+    }
+
     draw(){
         console.log('drawing circle');
     }
 }
 
 const circle = new Circle('red', 5);
+circle.move();
+
