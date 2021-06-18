@@ -9,8 +9,8 @@ function extend(Child, Parent){
     Child.prototype.constructor = Child;
 }
 
-function Circle(radius, color, texture){
-    Shape.call(this, color, texture);
+function Circle(radius, ...props){
+    Shape.call(this, ...props);
     
     this.radius = radius;
 }
@@ -29,8 +29,8 @@ Circle.prototype.spin = function(){
 //without this, the only constructor it has access to is its base's, ie. Shape's constructor.
 Circle.prototype.constructor = Circle;
 
-function Square(sideLength, color, texture){
-    Shape.call(this, color, texture);
+function Square(sideLength, ...props){
+    Shape.call(this, ...props);
 
     this.sideLength = sideLength;
 }
