@@ -16,7 +16,7 @@ function Circle(radius, color, texture){
 }
 
 Shape.prototype.draw = function(){
-    
+    console.log('drawing shape');
 }
 
 //this line declares the prototypical inheritance. 
@@ -36,6 +36,14 @@ function Square(sideLength, color, texture){
 }
 
 extend(Square, Shape);
+
+//This is how you override parent draw method. Musst be after extend, ie. act of assigning inheritance.
+Circle.prototype.draw = function(){
+    //this is how you call the base method first.  
+    Shape.prototype.draw.call(this);
+
+    console.log('drawing circle');
+}
 
 const circle = new Circle(5, 'red', 'smooth');
 const square = new Square(4, 'blue', 'grainy');
